@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+
+
+*{
+    font-family: "Poppins", sans-serif;
+    margin: 0px;
+    padding: 0px;
+  }
+  
+  
+  .card_parent {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+  }
+  
+  .card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 800px;
+    height:400px;
+  }
+  
+  /* .question{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    height:20vh;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  
+  .option_1{
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+  }
+   */
+  
+  
+  
+  
+  
+  @media only screen and (max-width: 850px){
+    .card{
+      width: 650px;
+    }
+  }
+  
+  
+  
+  
+  
+  
+  @media only screen and (max-width: 450px){
+    .card{
+      width: 380px;
+      height: 550px;
+    }
+  }
