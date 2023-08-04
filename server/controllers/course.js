@@ -1,5 +1,4 @@
 import Users from "../models/Users.js"
-import Tutors from "../models/Tutors.js"
 import Course from "../models/course.js"
 
 
@@ -7,7 +6,7 @@ import Course from "../models/course.js"
 
 
 export const addCourse = async(req, res)=>{
-    const newCourse = new Course({userId:req.tutor.id, ...req.body})
+    const newCourse = new Course({userId:req.user.id, ...req.body})
     try{
         const savedCourse = await newCourse.save()
         res.status(200).json(savedCourse)

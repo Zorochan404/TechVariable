@@ -2,7 +2,6 @@ import express from 'express'
 import mongoose from 'mongoose'
 import dotenv from 'dotenv'
 import userRouter from './routes/user.js'
-import tutorRouter from './routes/tutor.js'
 import commentRouter from './routes/comments.js'
 import courseRouter from './routes/course.js'
 import authRouter from './routes/authentication.js'
@@ -32,9 +31,8 @@ const connect = async() => {
 app.use(cors({origin: 'http://localhost:5173'}))
 app.use(cookieParser())
 app.use(express.json())
-app.use('/api/authentication', authRouter)
+app.use('/api/auth', authRouter)
 app.use('/api/users', userRouter)
-app.use('/api/tutor', tutorRouter)
 app.use('/api/course', courseRouter)
 app.use('/api/comment', commentRouter)
 
@@ -44,4 +42,4 @@ app.use('/api/comment', commentRouter)
 
 connect()
 
-app.listen(8800, ()=> console.log ('listening on port 8003'))
+app.listen(8800, ()=> console.log ('listening on port 8800'))

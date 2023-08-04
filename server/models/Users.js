@@ -1,4 +1,5 @@
 import mongoose from 'mongoose'
+import validator from 'validator'
 
 
 const UserSchema = new mongoose.Schema({
@@ -10,18 +11,35 @@ const UserSchema = new mongoose.Schema({
     email: {
         type: String,
         required: true,
-        unique: true
+        unique: true,
+        validate:[validator.isEmail]
     },
     password: {
         type: String,
-        required: true,
-        unique: false
+        required: true
     },
-    img: {
-        type:String
+    avatar: {
+        public_id:{
+            type:String,
+            default:"328462894692"
+        },
+        url:{
+            type:String,
+            default:"dmvbjskbv"
+        }
     },
     mycourses:{
         type:[String]
+    },
+    role:{
+        type:String,
+        default: "student"
+    },
+    resetpasswordtoken:{
+        type:String,
+    },
+    resetpasswordexipre:{
+        type:Date
     }
 
 
