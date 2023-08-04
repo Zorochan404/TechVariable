@@ -1,30 +1,21 @@
 import express from "express"
-import { signin, signup, tutorsignin, tutorsignup } from "../controllers/authentication.js";
+import { logout, resetPass, resetPassword, signin, signup} from "../controllers/authentication.js";
 
 
 const router = express.Router();
 
 
-//signup
+
 
 router.post("/signup", signup)
-
-//signin
-
 router.post("/signin", signin)
-
-//google signin
-
 router.post("/google", )
+router.post('/logout', logout)
+router.post('/v1/password/reset', resetPassword)
+router.get('/v1/password/reset/:token', resetPass).put(resetPass)
 
 
-//tutor signup
-router.post("/tutorsignup", tutorsignup)
 
-
-
-//user signin
-router.post("/tutorsignin", tutorsignin)
 
 
 
